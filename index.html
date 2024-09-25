@@ -18,7 +18,7 @@
       }
     }
 
-   @keyframes fadeInUp {
+    @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(50px);
@@ -36,21 +36,11 @@
     main {
       animation: fadeInUp 1.5s ease;
     }
-    
+
     footer {
       animation: fadeInUp 1.5s ease;
     }
 
-    html {
-      height: 100%;
-      width: 100%;
-      user-select: none;
-    }
-    
-    body::-webkit-scrollbar {
-      display: none;
-    }
-    
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -59,8 +49,6 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
     }
 
     header {
@@ -77,19 +65,22 @@
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 80px;
-    }
-
-    li {
-      font-weight: bold;
     }
 
     h2 {
       color: #333;
+      cursor: pointer;
     }
 
-    p {
-      line-height: 1.6;
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .accordion img {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
     }
 
     footer {
@@ -101,124 +92,79 @@
       bottom: 0;
       width: 100%;
     }
-
-    a {
-      color: #d600d6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-weight: bold;
-      content: "L'Invenzione della Stampa a Caratteri Mobili: Un Viaggio nella Rivoluzione della Comunicazione";
-      text-align: center;
-      cursor: pointer;
-      position: center;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(124deg, #ff2400, #e81d1d, blue, #e3e81d, #1de840, #1ddde8, purple, #e61a0b, pink);
-      background-size: 1800% 1800%;
-      -webkit-animation: rainbow 18s ease infinite;
-      -z-animation: rainbow 18s ease infinite;
-      -o-animation: rainbow 18s ease infinite;
-      animation: rainbow 18s ease infinite;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    @-webkit-keyframes rainbow {
-      0% {
-        background-position: 0% 82%
-      }
-
-      50% {
-        background-position: 100% 19%
-      }
-
-      100% {
-        background-position: 0% 82%
-      }
-    }
-
-    @-moz-keyframes rainbow {
-      0% {
-        background-position: 0% 82%
-      }
-
-      50% {
-        background-position: 100% 19%
-      }
-
-      100% {
-        background-position: 0% 82%
-      }
-    }
-
-    @-o-keyframes rainbow {
-      0% {
-        background-position: 0% 82%
-      }
-
-      50% {
-        background-position: 100% 19%
-      }
-
-      100% {
-        background-position: 0% 82%
-      }
-    }
-
-    @keyframes rainbow {
-      0% {
-        background-position: 0% 82%
-      }
-
-      50% {
-        background-position: 100% 19%
-      }
-
-      100% {
-        background-position: 0% 82%
-      }
-    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1 style="cursor: default;">L'Invenzione della Stampa a Caratteri Mobili: Un Viaggio nella Rivoluzione della Comunicazione</h1>
+    <h1>L'Invenzione della Stampa a Caratteri Mobili: Un Viaggio nella Rivoluzione della Comunicazione</h1>
   </header>
-  <br>
-  <br>
-  <main style="margin-top: 0px">
-    <h2>Introduzione</h2>
-    <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità. Prima di questo rivoluzionario cambiamento, i libri venivano copiati a mano, un processo lungo e costoso che limitava la diffusione del sapere. Con la stampa, la produzione di libri divenne più rapida e accessibile, favorendo una circolazione senza precedenti di idee e conoscenze.</p>
-    <br>
-    <h2>Johannes Gutenberg e l'Invenzione della Stampa</h2>
-    <p>Johannes Gutenberg, un orafo e inventore tedesco, introdusse il concetto di stampa a caratteri mobili in Europa. Anche se le tecniche di stampa esistevano già in Asia, fu l'invenzione di Gutenberg del 1450 a rendere possibile la produzione di massa di libri in Occidente. La sua invenzione combinava il torchio da stampa, i caratteri mobili in metallo e un'inchiostrazione più efficace, rivoluzionando così il mondo della scrittura.</p>
-    <br>
-    <h2>La Bibbia di Gutenberg</h2>
-    <p>Il capolavoro di Gutenberg fu la Bibbia a 42 linee, completata intorno al 1455. Con circa 180 copie prodotte, di cui 49 sopravvissute, rappresenta uno dei primi esempi di stampa di alta qualità. Questo testo sacro non solo segnò l'inizio dell'era della stampa, ma rese accessibile un testo religioso fondamentale a un numero sempre maggiore di lettori.</p>
-    <br>
-    <h2>L'Impatto sulla Società Europea</h2>
-    <p>L'invenzione della stampa a caratteri mobili permise la rapida diffusione di idee e testi in tutta Europa. Il costo dei libri diminuì drasticamente, rendendoli accessibili a un pubblico più vasto. La Riforma protestante, guidata da Martin Lutero, trovò un alleato potente nella stampa: le sue 95 tesi furono rapidamente distribuite in tutta Europa, stimolando un dibattito religioso senza precedenti.</p>
-    <br>
-    <h2>La Stampa a Caratteri Mobili in Cina</h2>
-    <p>Molto prima di Gutenberg, la stampa a caratteri mobili era già stata sviluppata in Cina. Già nell'XI secolo, l'inventore Bi Sheng aveva creato un sistema di stampa utilizzando caratteri mobili in ceramica. La tecnica fu poi perfezionata e sviluppata ulteriormente durante la dinastia Yuan e Ming, con l'uso di caratteri in legno e metallo. Tuttavia, l'alfabeto cinese, composto da migliaia di caratteri, rendeva più complessa e meno efficiente la diffusione di questa tecnologia rispetto all'Europa, dove il numero di lettere era più limitato. Nonostante ciò, la stampa a caratteri mobili cinese ha contribuito a migliorare la produzione dei libri e a facilitare la diffusione della conoscenza in Asia orientale.</p>
-    <br>
-    <h2>Conclusione</h2>
-    <p>La stampa a caratteri mobili ha trasformato il mondo, favorendo l'alfabetizzazione, la circolazione delle idee e l'evoluzione del pensiero moderno. Senza l'invenzione di Gutenberg, la Riforma, l'Illuminismo e persino la Rivoluzione Scientifica avrebbero avuto una diffusione molto più lenta. Oggi, a distanza di secoli, possiamo ancora vedere l'influenza della stampa in ogni aspetto della nostra vita quotidiana.</p>
+
+  <main>
+    <section class="accordion">
+      <h2>Introduzione</h2>
+      <div class="content">
+        <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità...</p>
+        <img src="resources/introduzione.jpg" alt="Immagine introduttiva">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <h2>Johannes Gutenberg e l'Invenzione della Stampa</h2>
+      <div class="content">
+        <p>Johannes Gutenberg, un orafo e inventore tedesco, introdusse il concetto di stampa a caratteri mobili in Europa...</p>
+        <img src="resources/gutenberg.jpg" alt="Gutenberg">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <h2>La Bibbia di Gutenberg</h2>
+      <div class="content">
+        <p>Il capolavoro di Gutenberg fu la Bibbia a 42 linee, completata intorno al 1455...</p>
+        <img src="resources/bibbia.jpg" alt="Bibbia di Gutenberg">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <h2>L'Impatto sulla Società Europea</h2>
+      <div class="content">
+        <p>L'invenzione della stampa a caratteri mobili permise la rapida diffusione di idee e testi in tutta Europa...</p>
+        <img src="resources/impatto.jpg" alt="Impatto sulla società">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <h2>La Stampa a Caratteri Mobili in Cina</h2>
+      <div class="content">
+        <p>Molto prima di Gutenberg, la stampa a caratteri mobili era già stata sviluppata in Cina...</p>
+        <img src="resources/cina.jpg" alt="Stampa a caratteri mobili in Cina">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <h2>Conclusione</h2>
+      <div class="content">
+        <p>La stampa a caratteri mobili ha trasformato il mondo, favorendo l'alfabetizzazione, la circolazione delle idee...</p>
+        <img src="resources/conclusione.jpg" alt="Conclusione">
+      </div>
+    </section>
   </main>
-  <br>
 
   <footer>
-    <p style="color: #d600d6; font-size: 16px;">Giovanni Paolo Fraternale<br><gaga style="color: #d600d6; font-size: 14px; margin-top: 0;">e Riccardo Prete</gaga></p>
+    <p>Giovanni Paolo Fraternale e Riccardo Prete</p>
   </footer>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion h2");
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener("click", () => {
+        const content = accordion.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
 
 </body>
 
