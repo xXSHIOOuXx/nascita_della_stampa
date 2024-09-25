@@ -231,27 +231,21 @@
     {
       width: 100%;
     }
-    
-    .toggle {
-        display: none;
-    }
 
     .content {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease, transform 0.5s ease;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .show {
+      display: block;
+      animation: fadeInDown 0.5s forwards;
     }
 
-    .toggle:checked + .content {
-        display: block;
-        animation: fadeInDown 0.5s forwards;
-        opacity: 1;
-    }
-
-    .toggle:not(:checked) + .content {
-        animation: fadeInUp 0.5s forwards;
-        opacity: 0;
-        display: none;
+    .hide {
+      animation: fadeOutUp 0.5s forwards;
+      opacity: 0;
     }
   </style>
 </head>
@@ -303,18 +297,33 @@
   </footer>
 
   <script>
+      window.addEventListener('DOMContentLoaded', () => {
         const toggles = document.querySelectorAll('.toggle');
-
+      
         toggles.forEach(toggle => {
-            toggle.addEventListener('change', () => {
-                const contenuto = toggle.nextElementSibling;
-                if (toggle.checked) {
-                    contenuto.style.display = 'block';
-                } else {
-                    contenuto.style.display = 'none';
-                }
-            });
+          const content = toggle.nextElementSibling;
+          if (!toggle.checked) {
+            content.style.display = 'none';
+          }
         });
+      });
+
+      document.querySelectorAll('.toggle').forEach(toggle => {
+        toggle.addEventListener('change', function() {
+          const content = toggle.nextElementSibling;
+          if (toggle.checked) {
+            content.classList.remove('hide');
+            content.classList.add('show');
+            content.style.display = 'block';
+          } else {
+            content.classList.remove('show');
+            content.classList.add('hide');
+            setTimeout(() => {
+              content.style.display = 'none';
+            }, 500);
+          }
+        });
+      });
   </script>
 
 </body>
