@@ -196,7 +196,6 @@
       position: relative;
       display: inline-block;
       padding: 0 40px;
-      cursor: pointer;
     }
 
     .text
@@ -263,9 +262,9 @@
   <br>
   <br>
   <main style="margin-top: 0px">
-    <span class="container">
-      <div class="text" data-text=" "><h2><label for="toggle1">Introduzione</label></h2></div>
-    </span>
+    <label for="toggle1" cursor="pointer";><span class="container">
+      <div class="text" data-text=" "><h2>Introduzione</h2></div>
+    </span></label>
     <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità. Prima di questo rivoluzionario cambiamento, i libri venivano copiati a mano, un processo lungo e costoso che limitava la diffusione del sapere. Con la stampa, la produzione di libri divenne più rapida e accessibile, favorendo una circolazione senza precedenti di idee e conoscenze.</p>
     <input type="checkbox" id="toggle1" class="toggle">
     <div class="contenuto">Questo è il Contenuto 1.</div>
@@ -302,23 +301,23 @@
   </footer>
 
   <script>
-          const toggles = document.querySelectorAll('.toggle');
-  
-          toggles.forEach(toggle => {
-              toggle.addEventListener('change', () => {
-                  const contenuto = toggle.nextElementSibling;
-                  if (toggle.checked) {
-                      contenuto.style.display = 'block';
-                  } else {
-                      contenuto.classList.add('nascondi');
-                      setTimeout(() => {
-                          contenuto.style.display = 'none';
-                          contenuto.classList.remove('nascondi');
-                      }, 500);
-                  }
-              });
-          });
-  </script>
+        const toggles = document.querySelectorAll('.toggle');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('change', () => {
+                const contenuto = toggle.nextElementSibling;
+                if (toggle.checked) {
+                    contenuto.style.display = 'block';
+                } else {
+                    contenuto.classList.add('nascondi');
+                    setTimeout(() => {
+                        contenuto.style.display = 'none';
+                        contenuto.classList.remove('nascondi');
+                    }, 500);
+                }
+            });
+        });
+    </script>
 
 </body>
 
