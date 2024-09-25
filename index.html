@@ -232,6 +232,48 @@
     {
       width: 100%;
     }
+    
+    .toggle {
+        display: none;
+    }
+    
+    .content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .toggle:checked + .content {
+        display: block;
+        animation: fadeInDown 0.5s forwards;
+        opacity: 1;
+    }
+    
+     #toggle:not(:checked) + .content {
+         animation: fadeInUp 0.5s forwards;
+     }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+             transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
   </style>
 </head>
 
@@ -244,12 +286,14 @@
   <br>
   <main style="margin-top: 0px">
     <span class="container">
-      <div class="text" data-text=" "><h2>Introduzione</h2></div>
+      <div class="text" data-text=" "><h2><label for="toggle1">Introduzione</label></h2></div>
     </span>
+    <input type="checkbox" id="toggle1" class="toggle">
     <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità. Prima di questo rivoluzionario cambiamento, i libri venivano copiati a mano, un processo lungo e costoso che limitava la diffusione del sapere. Con la stampa, la produzione di libri divenne più rapida e accessibile, favorendo una circolazione senza precedenti di idee e conoscenze.</p>
+    <div class="contenuto">Questo è il Contenuto 1.</div>
     <br>
     <span class="container">
-      <div class="text" data-text=" "><h2>Johannes Gutenberg e l'Invenzione della Stampa</h2></div>
+      <div class="text" data-text=" "><h2><label for="toggle">Johannes Gutenberg e l'Invenzione della Stampa</label></h2></div>
     </span>
     <p>Johannes Gutenberg, un orafo e inventore tedesco, introdusse il concetto di stampa a caratteri mobili in Europa. Anche se le tecniche di stampa esistevano già in Asia, fu l'invenzione di Gutenberg del 1450 a rendere possibile la produzione di massa di libri in Occidente. La sua invenzione combinava il torchio da stampa, i caratteri mobili in metallo e un'inchiostrazione più efficace, rivoluzionando così il mondo della scrittura.</p>
     <br>
@@ -278,6 +322,25 @@
   <footer>
     <p style="color: #d600d6; font-size: 16px;">Giovanni Paolo Fraternale<br><gaga style="color: #d600d6; font-size: 14px; margin-top: -50px;">e Riccardo Prete</gaga></p>
   </footer>
+
+  <script>
+          const toggles = document.querySelectorAll('.toggle');
+  
+          toggles.forEach(toggle => {
+              toggle.addEventListener('change', () => {
+                  const contenuto = toggle.nextElementSibling;
+                  if (toggle.checked) {
+                      contenuto.style.display = 'block';
+                  } else {
+                      contenuto.classList.add('nascondi');
+                      setTimeout(() => {
+                          contenuto.style.display = 'none';
+                          contenuto.classList.remove('nascondi');
+                      }, 500);
+                  }
+              });
+          });
+  </script>
 
 </body>
 
