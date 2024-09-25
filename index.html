@@ -29,6 +29,17 @@
       }
     }
 
+    @keyframes fadeOutUp {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+    }
+
     header {
       animation: fadeInDown 1.5s ease;
     }
@@ -262,8 +273,8 @@
       <div class="text" data-text=" "><h2>Introduzione</h2></div>
     </span></label>
     <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità. Prima di questo rivoluzionario cambiamento, i libri venivano copiati a mano, un processo lungo e costoso che limitava la diffusione del sapere. Con la stampa, la produzione di libri divenne più rapida e accessibile, favorendo una circolazione senza precedenti di idee e conoscenze.</p>
-    <input type="checkbox" id="toggle1" class="toggle">
-    <div class="contenuto">Questo è il Contenuto 1.</div>
+    <input type="checkbox" id="toggle1" class="toggle" style="display: none;">
+    <div class="content">Questo è il Contenuto 1.</div>
     <br>
     <span class="container">
       <div class="text" data-text=" "><h2><label for="toggle">Johannes Gutenberg e l'Invenzione della Stampa</label></h2></div>
@@ -320,7 +331,7 @@
             content.classList.add('hide');
             setTimeout(() => {
               content.style.display = 'none';
-            }, 500);
+            }, 200);
           }
         });
       });
