@@ -235,22 +235,24 @@
     .toggle {
         display: none;
     }
-    
+
     .content {
         display: none;
         opacity: 0;
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    
+
     .toggle:checked + .content {
         display: block;
         animation: fadeInDown 0.5s forwards;
         opacity: 1;
     }
-    
-     #toggle:not(:checked) + .content {
-         animation: fadeInUp 0.5s forwards;
-     }
+
+    .toggle:not(:checked) + .content {
+        animation: fadeInUp 0.5s forwards;
+        opacity: 0;
+        display: none;
+    }
   </style>
 </head>
 
@@ -262,7 +264,7 @@
   <br>
   <br>
   <main style="margin-top: 0px">
-    <label for="toggle1" cursor="pointer";><span class="container">
+    <label for="toggle1" style="cursor: pointer;"><span class="container">
       <div class="text" data-text=" "><h2>Introduzione</h2></div>
     </span></label>
     <p>L'invenzione della stampa a caratteri mobili, attribuita a Johannes Gutenberg intorno al 1450, ha rappresentato un punto di svolta nella storia dell'umanità. Prima di questo rivoluzionario cambiamento, i libri venivano copiati a mano, un processo lungo e costoso che limitava la diffusione del sapere. Con la stampa, la produzione di libri divenne più rapida e accessibile, favorendo una circolazione senza precedenti di idee e conoscenze.</p>
@@ -309,15 +311,11 @@
                 if (toggle.checked) {
                     contenuto.style.display = 'block';
                 } else {
-                    contenuto.classList.add('nascondi');
-                    setTimeout(() => {
-                        contenuto.style.display = 'none';
-                        contenuto.classList.remove('nascondi');
-                    }, 500);
+                    contenuto.style.display = 'none';
                 }
             });
         });
-    </script>
+  </script>
 
 </body>
 
