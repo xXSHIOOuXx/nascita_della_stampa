@@ -201,8 +201,11 @@
 
     .text
     {
+      font-size: 100px;
       text-transform: uppercase;
-      visibility: hidden;
+      font-weight: 900;
+      position: relative;
+      color: #34495e;
     }
 
     .text::before
@@ -230,6 +233,7 @@
     .container:hover .text::before,.container:hover::before
     {
       width: 100%;
+      overflow: hidden;
     }
   </style>
 </head>
